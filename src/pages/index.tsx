@@ -1,8 +1,16 @@
-import { NextPage } from "next";
+import { NextPage } from "next"
+
+import { Presentation } from '../presentation/home'
+import Head from "next/head"
 
 const Home : NextPage = () => {
     return (
-        <h1>Olá</h1>
+        <>
+            <Head>
+                <title>Home @ André Martins</title>
+            </Head>
+            <Presentation/>
+        </>
     )
 } 
 
