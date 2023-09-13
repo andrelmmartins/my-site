@@ -60,7 +60,7 @@ export function Present() {
       >
         Hello!
         <br />
-        <strong>I'm André Martins</strong>
+        <strong>I&rsquo;m André Martins</strong>
       </Heading>
     </Stack>
   );
