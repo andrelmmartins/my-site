@@ -22,7 +22,7 @@ export function Skills({ ...rest }: StackProps) {
                 {
                     techs.map((tech, index) => (
                         <Stack spacing='15px' key={tech.title + '-' + index}>
-                            <Heading as='h3' fontSize='1.5rem'><strong>{tech.title}</strong></Heading>
+                            <Heading as='h3' fontSize='1.5rem' id={ tech.title === "Engenharia" ? "engenharia" : tech.title }><strong>{tech.title}</strong></Heading>
                             <Stack pl='10px'>
                                 <List>
                                     { 
