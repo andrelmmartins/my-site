@@ -1,20 +1,33 @@
-import { MiniLogo, ThemeIcon } from "@/utils/icons";
-import { Box, Flex, Stack, useColorMode } from "@chakra-ui/react";
-import { useTheme } from "@emotion/react";
 import { useEffect } from "react";
+import { useRouter } from "next/router";
+
+import { MiniLogo, ThemeIcon } from "@/utils/icons";
+import { Box, Flex, Stack, useColorMode, Text } from "@chakra-ui/react";
 
 export default function Aside({ side }: { side: "left" | "right" }) {
-  if (side === "left") return <Left />;
-  return <Right />;
+  const size = [5, 6, 10];
+
+  if (side === "left") return <Left size={size} />;
+  return <Right size={size} />;
 }
 
-function Left() {
-  const size = 10;
-
+function Left({ size }: { size: number[] }) {
   return (
     <Stack as="aside" p={size} gap={size} align="center">
       <MiniLogo h={size} w={size} />
       <ScrollFollower />
+    </Stack>
+  );
+}
+
+function Right({ size }: { size: number[] }) {
+  const { toggleColorMode } = useColorMode();
+
+  const router = useRouter();
+
+  return (
+    <Stack as="aside" p={size} gap={size} align="center">
+      <ThemeIcon h={size} w={size} onClick={toggleColorMode} cursor="pointer" />
     </Stack>
   );
 }
@@ -62,23 +75,11 @@ function ScrollFollower() {
       <Box
         bg={colorMode === "light" ? "black" : "white.2"}
         transition="all 0.2s"
-        w="8px"
+        w={[1, 1, 2]}
         position="absolute"
         id="follower-thumb"
         transform="translateY(-8px)"
       ></Box>
     </Flex>
-  );
-}
-
-function Right() {
-  const { toggleColorMode } = useColorMode();
-
-  const size = 10;
-
-  return (
-    <Stack as="aside" p={size} gap={size} align="center">
-      <ThemeIcon h={size} w={size} onClick={toggleColorMode} cursor="pointer" />
-    </Stack>
   );
 }

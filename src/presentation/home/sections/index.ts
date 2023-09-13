@@ -1,6 +1,4 @@
 // preserve order
 
-// export * from './present'
-// export * from './skills'
-
-export {};
+export * from "./present";
+// export * from "./skills";

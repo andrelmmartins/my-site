@@ -4,7 +4,13 @@ export const MiniLogo = ({ ...rest }: IconProps) => {
   const { colorMode } = useColorMode();
 
   return (
-    <Icon w="auto" h="auto" viewBox="0 0 70 70" {...rest}>
+    <Icon
+      w="auto"
+      h="auto"
+      viewBox="0 0 70 70"
+      aria-label="André Martins's logo"
+      {...rest}
+    >
       <path
         d="M35 0.974976L59.7487 11.2262L70 35.975L59.7487 60.7237L35 70.975L10.2513 60.7237L0 35.975L10.2513 11.2262L35 0.974976Z"
         fill={colorMode == "light" ? "red.500" : "#EFEFEF"}
@@ -21,7 +27,13 @@ export const ThemeIcon = ({ ...rest }: IconProps) => {
   const { colorMode } = useColorMode();
 
   return (
-    <Icon w="auto" h="auto" viewBox="0 0 70 70" {...rest}>
+    <Icon
+      w="auto"
+      h="auto"
+      viewBox="0 0 70 70"
+      aria-label="toggle color mode"
+      {...rest}
+    >
       {colorMode == "light" ? (
         <>
           <path

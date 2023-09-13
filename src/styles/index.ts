@@ -8,12 +8,14 @@ export const theme = extendTheme({
 
   colors: {
     black: "#121B16",
+    shadow: "#121B1655",
     white: {
       1: "#FAFAFA",
       2: "#F5F5F5",
       3: "#EFEFEF",
       4: "#DDDDDD",
       5: "#AAAAAA",
+      shadow: "#FAFAFAbb",
     },
     green: "#29D967",
   },
@@ -26,8 +28,8 @@ export const theme = extendTheme({
         fontWeight: "normal",
       },
       ".scrollbar-none": {
-        "scrollbar-width": "none",
-        "-ms-overflow-style": "none",
+        scrollbarWidth: "none",
+        msOverflowStyle: "none",
       },
 
       ".scrollbar-none::-webkit-scrollbar": {
