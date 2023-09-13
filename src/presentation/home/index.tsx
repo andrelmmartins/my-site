@@ -15,8 +15,8 @@ export function Presentation() {
         overflowX="hidden"
         className="scrollbar-none"
       >
-        {Object.values(sections).map((Section) => (
-          <Section />
+        {Object.values(sections).map((Section, index) => (
+          <Section key={`section-${index}`} />
         ))}
       </Stack>
       <Aside side="right" />
